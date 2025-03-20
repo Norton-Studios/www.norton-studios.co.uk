@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Container } from "../components/Container"
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
@@ -32,10 +31,8 @@ export default function RootLayout({
       >
         <div className="flex flex-col h-screen">
           <Header />
-          <main className="flex-grow font-[family-name:var(--font-geist-sans)] pt-20">
-            <Container>
-              {children}
-            </Container>
+          <main className="flex-grow font-[family-name:var(--font-geist-sans)] pt-4 lg:pt-20">
+            {children}
           </main>
           <Footer />
         </div>
