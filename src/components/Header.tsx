@@ -1,13 +1,18 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Container } from '../components/Container';
+import { Container } from '@/components/Container';
+import { CustomLink } from '@/components/CustomLink';
+import { twMerge } from 'tailwind-merge';
 
 export const Header = () => {
-  const linkClasses =
-    'flex uppercase hover:underline hover:underline-offset-4 p-2 md:px-4 md:py-3 ml-2 md:ml-6 text-white bg-blue-900 font-bold hover:bg-blue-800';
+  const buttonClasses = 'flex hover:underline hover:underline-offset-4 p-2 md:px-4 md:py-3 ml-2 md:ml-6 text-white bg-blue-900 font-bold hover:bg-blue-800';
   const mobileLinkClasses = 'px-2 py-4 hover:underline hover:underline-offset-4';
 
   const menuItems = [
+    {
+      label: 'Services',
+      url: '/services'
+    },
     {
       label: 'Case studies',
       url: '/case-studies'
@@ -39,26 +44,36 @@ export const Header = () => {
             </svg>
             <span className="sr-only">Menu</span>
           </summary>
-          <nav className="absolute flex flex-col z-10 px-8 py-4 left-0 right-0 top-[54px] w-auto bg-slate-200">
+          <div className="absolute z-10 px-8 py-4 left-0 right-0 top-[54px] w-auto bg-tan-500">
+            <nav className="flex flex-col">
+              {menuItems.map((item) => {
+                return (
+                  <CustomLink key={item.url} variant="blue" href={item.url} className={mobileLinkClasses}>
+                    {item.label}
+                  </CustomLink>
+                );
+              })}
+            </nav>
+            <Link href="/talk-to-us" className={twMerge(buttonClasses, 'inline-block text-center px-6 my-4')}>
+              Talk to us!
+            </Link>
+          </div>
+        </details>
+
+        <div className="hidden md:flex max-md:mt-6 max-md:py-6 max-md:border-t-2 max-md:border-t-slate-200 items-center">
+          <nav>
             {menuItems.map((item) => {
               return (
-                <Link key={item.url} href={item.url} className={mobileLinkClasses}>
+                <CustomLink key={item.url} href={item.url} className="text-lg font-bold p-4">
                   {item.label}
-                </Link>
+                </CustomLink>
               );
             })}
           </nav>
-        </details>
-
-        <nav className="hidden md:flex max-md:mt-6 max-md:py-6 max-md:border-t-2 max-md:border-t-slate-200 items-center">
-          {menuItems.map((item) => {
-            return (
-              <Link key={item.url} href={item.url} className={linkClasses}>
-                {item.label}
-              </Link>
-            );
-          })}
-        </nav>
+          <Link href="/talk-to-us" className={buttonClasses}>
+            Talk to us!
+          </Link>
+        </div>
       </Container>
     </header>
   );
