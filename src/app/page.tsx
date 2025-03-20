@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Container } from '@/components/Container';
 import { Heading } from '@/components/Heading';
 import { CustomLink } from '@/components/CustomLink';
+import { Paragraph } from '@/components/Paragraph';
 
 export default function Home() {
   return (
@@ -13,12 +14,12 @@ export default function Home() {
             <Heading level="h1" className="!leading-[1.2]">
               Provider of Digital Solutions for the Public Sector
             </Heading>
-            <p className="text-lg mt-8">
+            <Paragraph className="mt-8 leading-[2]">
               Norton Studios is a trusted public sector delivery partner. We specialise in Government Digital Services across the UK, with a particular focus on
               Accessibility (WCAG 2.1/2.2) and Responsive Website design.
-            </p>
+            </Paragraph>
           </div>
-          <div className="flex align-middle">
+          <div className="align-middle hidden lg:flex">
             <Image
               className="mx-auto mt-8 lg:md-0 w-[60px] h-[60px] lg:w-[137px] lg:h-[138px]"
               src="/hero-logo.svg"
@@ -33,14 +34,20 @@ export default function Home() {
         <Container>
           <div className="lg:grid lg:grid-cols-2 lg:gap-4">
             <div>
-              <Image className="w-[92px] h-[90px] lg:w-[456px] lg:h-[448px]" src="/best-practice.webp" alt="Placeholder image" width={456} height={448} />
+              <Image
+                className="mx-auto lg:m-none mb-20 lg:mb-0 w-[184px] h-180px] lg:w-[456px] lg:h-[448px]"
+                src="/best-practice.webp"
+                alt="Placeholder image"
+                width={456}
+                height={448}
+              />
             </div>
-            <div>
+            <div className="flex flex-col justify-center">
               <Heading level="h2" className="text-white mb-8">
                 Best practices matter to us
               </Heading>
-              <p className="text-white text-lg">We believe best practices matter, especially in the public sector.</p>
-              <p className="text-white text-lg">
+              <Paragraph className="text-white">We believe best practices matter, especially in the public sector.</Paragraph>
+              <Paragraph className="text-white">
                 That&apos;s why we are vocal advocates for{' '}
                 <CustomLink variant="yellow" target="_blank" href="https://www.gov.uk/service-manual/service-standard/point-12-make-new-source-code-open">
                   Coding in the open
@@ -54,7 +61,7 @@ export default function Home() {
                   GDS Way
                 </CustomLink>
                 .
-              </p>
+              </Paragraph>
             </div>
           </div>
         </Container>
