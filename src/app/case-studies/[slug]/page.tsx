@@ -5,12 +5,24 @@ import { CaseStudy } from '@/components/CaseStudy';
 import { Container } from '@/components/Container';
 import { CustomLink } from '@/components/CustomLink';
 
-export default async function Page({ params }: PageParams) {
+const getData = async ({ params }: PageParams) => {
   const { slug } = await params;
   const { content, frontmatter } = await compileMDX<{ title: string }>({
     source: fs.readFileSync(`src/content/case-studies/${slug}.mdx`, 'utf-8'),
     options: { parseFrontmatter: true }
   });
+  return { content, frontmatter };
+};
+
+export async function generateMetadata({ params }: PageParams) {
+  const { frontmatter } = await getData({ params });
+  return {
+    title: `Norton Studios Case Study - ${frontmatter.title}`
+  };
+}
+
+export default async function Page({ params }: PageParams) {
+  const { content, frontmatter } = await getData({ params });
 
   return (
     <>

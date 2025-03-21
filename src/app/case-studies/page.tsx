@@ -5,6 +5,10 @@ import { Container } from '@/components/Container';
 import { CustomLink } from '@/components/CustomLink';
 import { Paragraph } from '@/components/Paragraph';
 
+export const metadata = {
+  title: 'Norton Studios Ltd - Case Studies'
+};
+
 export default async function CaseStudies() {
   const caseStudies = fs
     .readdirSync('src/content/case-studies')
