@@ -86,7 +86,7 @@ content:
         type: boolean
         required: false
     view:
-      fields: [title, visible]
+      fields: [title, awesomeness, visible]
       primary: title
       sort: [ awesomeness, title ]
       order: desc
@@ -103,7 +103,7 @@ content:
       - name: published
         label: Published
         type: boolean
-        required: true
+        required: false
       - name: featured_image
         label: Featured Image
         type: image
@@ -111,19 +111,19 @@ content:
       - name: title
         label: Title
         type: string
-        required: false
+        required: true
       - name: body
         label: Content
         type: rich-text
         required: true
-      - name: date
-        label: Publish Date
-        type: date
-        required: false
+      - name: awesomeness
+        label: Awesomeness (determines sort ranking)
+        type: number
+        required: true
     view:
-      fields: [title, published, date]
+      fields: [title, published, awesomeness]
       primary: title
-      sort: [ date, title ]
+      sort: [ awesomeness, title ]
       default:
         sort: date
         order: desc
