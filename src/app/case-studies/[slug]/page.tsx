@@ -15,7 +15,7 @@ export default async function Page({ params }: PageParams) {
   return (
     <>
       <Head>
-        <title>{frontmatter.title}</title>
+        <title>Norton Studios Case Study - {frontmatter.title}</title>
       </Head>
       <Container>
         <div className="max-w-3xl mx-auto mb-10 lg:mb-20">
