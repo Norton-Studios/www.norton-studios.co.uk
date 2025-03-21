@@ -69,7 +69,7 @@ content:
         label: Name
         type: string
         required: false
-      - name: bio
+      - name: body
         label: Bio
         type: rich-text
         required: true
