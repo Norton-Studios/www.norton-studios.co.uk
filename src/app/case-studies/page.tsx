@@ -33,7 +33,7 @@ export default async function CaseStudies() {
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
             {caseStudiesContent.map(({ frontmatter }) => (
               <li key={frontmatter.title}>
-                <CustomLink className="p-6 bg-tan-500 hover:bg-white block h-full" href={`/case-studies/${frontmatter.slug}`}>
+                <CustomLink className="p-6 bg-white hover:bg-tan-500 block h-full" href={`/case-studies/${frontmatter.slug}`}>
                   <Heading className="!text-xl" level="h2">
                     {frontmatter.title}
                   </Heading>
