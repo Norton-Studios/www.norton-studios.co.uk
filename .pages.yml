@@ -78,7 +78,7 @@ content:
         type: image
         required: false
       - name: awesomeness
-        label: Awesomeness (determines sort ranking)
+        label: Awesomeness (sort ranking)
         type: number
         required: true
       - name: visible
@@ -117,7 +117,7 @@ content:
         type: rich-text
         required: true
       - name: awesomeness
-        label: Awesomeness (determines sort ranking)
+        label: Awesomeness (sort ranking)
         type: number
         required: true
     view:
