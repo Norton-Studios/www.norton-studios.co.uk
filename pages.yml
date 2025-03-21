@@ -131,4 +131,4 @@ content:
 backend:
   name: github
   repo: Norton-Studios/www.norton-studios.co.uk
-  branch: content
+  branch: master
