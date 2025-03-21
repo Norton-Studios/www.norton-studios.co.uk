@@ -68,7 +68,7 @@ content:
       - name: title
         label: Name
         type: string
-        required: rue
+        required: true
       - name: body
         label: Bio
         type: rich-text
