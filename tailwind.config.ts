@@ -20,7 +20,8 @@ export default {
       }
     },
     backgroundImage: {
-      blue_bg: `url(/blue-bg.svg)`,
+      blue_bottom: `url(/blue-bottom.svg)`,
+      yellow_bottom: `url(/yellow-bottom.svg)`,
       tan_top: `url(/tan-top.svg)`
     }
   },

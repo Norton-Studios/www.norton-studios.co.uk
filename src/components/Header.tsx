@@ -5,7 +5,8 @@ import { CustomLink } from '@/components/CustomLink';
 import { twMerge } from 'tailwind-merge';
 
 export const Header = () => {
-  const buttonClasses = 'flex hover:underline hover:underline-offset-4 p-2 md:px-4 md:py-3 ml-2 md:ml-6 text-white bg-blue-900 font-bold hover:bg-blue-800';
+  const buttonClasses =
+    'flex hover:underline hover:underline-offset-4 p-2 md:px-4 md:py-3 ml-2 md:ml-6 text-blue-900 bg-yellow-500 font-bold hover:bg-yellow-400';
   const mobileLinkClasses = 'px-2 py-4 hover:underline hover:underline-offset-4';
 
   const menuItems = [

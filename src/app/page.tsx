@@ -1,16 +1,25 @@
 import Image from 'next/image';
+import fs from 'node:fs';
+import { compileMDX } from 'next-mdx-remote/rsc';
 
 import { Container } from '@/components/Container';
 import { Heading } from '@/components/Heading';
 import { CustomLink } from '@/components/CustomLink';
 import { Paragraph } from '@/components/Paragraph';
 
-export default function Home() {
+export default async function Home() {
+  const caseStudies = fs
+    .readdirSync('src/content/case-studies')
+    .filter((file) => file.endsWith('.mdx'))
+    .map(getContent);
+
+  const caseStudiesContent = await Promise.all(caseStudies);
+
   return (
     <>
-      <div className="bg-blue_bg bg-repeat-x bg-[center_bottom] pb-[180px] lg:pb-[260px] mb-[-2px]">
+      <div className="bg-blue_bottom bg-repeat-x bg-[center_bottom] pb-[180px] mb-[-2px]">
         <Container className="lg:grid lg:grid-cols-2 lg:gap-4">
-          <div>
+          <div className="xl:ml-20">
             <Heading level="h1" className="!leading-[1.2]">
               Provider of Digital Solutions for the Public Sector
             </Heading>
@@ -30,6 +39,7 @@ export default function Home() {
           </div>
         </Container>
       </div>
+
       <div className="bg-blue-900 py-[50px] lg:py-[100px]">
         <Container>
           <div className="lg:grid lg:grid-cols-2 lg:gap-4">
@@ -42,7 +52,7 @@ export default function Home() {
                 height={448}
               />
             </div>
-            <div className="flex flex-col justify-center">
+            <div className="flex flex-col justify-center xl:pr-20">
               <Heading level="h2" className="text-white mb-8">
                 Best practices matter to us
               </Heading>
@@ -66,16 +76,65 @@ export default function Home() {
           </div>
         </Container>
       </div>
+
       <div className="bg-tan-500 py-[200px]">
         <Container>
-          <Heading level="h2">Tan section</Heading>
+          <Heading className="text-center" level="h2">
+            What should we put here?
+          </Heading>
         </Container>
       </div>
-      <div className="bg-yellow-500 bg-tan_top bg-[center_top] py-[200px] bg-no-repeat">
+
+      <div className="bg-yellow-500 bg-tan_top bg-[center_top] pt-[200px] pb-20 bg-no-repeat">
         <Container>
-          <Heading level="h2">Yellow section</Heading>
+          <div className="lg:grid lg:grid-cols-2 lg:gap-4">
+            <div>
+              <Heading className="mb-8" level="h2">
+                Case Studies
+              </Heading>
+              <Paragraph>Some of the projects we have been involved with</Paragraph>
+              <CustomLink
+                href="/case-studies"
+                className="inline-block mt-4 hover:underline hover:underline-offset-4 p-2 md:px-4 md:py-3 text-white bg-blue-900 font-bold hover:bg-blue-800"
+              >
+                See all case studies &gt;
+              </CustomLink>
+            </div>
+            <ul className="mt-8 xl:mt-0">
+              {caseStudiesContent.map(({ frontmatter }, i) => {
+                if (i > 2) {
+                  return null;
+                }
+                return (
+                  <li key={frontmatter.title}>
+                    <CustomLink className="p-6 bg-white hover:bg-tan-500 block h-full mb-6" href={`/case-studies/${frontmatter.slug}`}>
+                      <Heading className="!text-xl" level="h2">
+                        {frontmatter.title}
+                      </Heading>
+                    </CustomLink>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </Container>
       </div>
     </>
   );
+}
+
+async function getContent(file: string) {
+  const content = await compileMDX<{ title: string; slug: string }>({
+    source: fs.readFileSync(`src/content/case-studies/${file}`, 'utf-8'),
+    options: {
+      parseFrontmatter: true,
+      scope: {
+        slug: file.replace(/\.mdx$/, '')
+      }
+    }
+  });
+
+  content.frontmatter.slug = file.replace(/\.mdx$/, '');
+
+  return content;
 }

@@ -1,6 +1,9 @@
 import * as fs from 'node:fs';
 import Head from 'next/head';
 import { compileMDX } from 'next-mdx-remote/rsc';
+import { CaseStudy } from '@/components/CaseStudy';
+import { Container } from '@/components/Container';
+import { CustomLink } from '@/components/CustomLink';
 
 export default async function Page({ params }: PageParams) {
   const { slug } = await params;
@@ -14,7 +17,14 @@ export default async function Page({ params }: PageParams) {
       <Head>
         <title>{frontmatter.title}</title>
       </Head>
-      {content}
+      <Container>
+        <div className="max-w-3xl mx-auto mb-10 lg:mb-20">
+          <CustomLink className="mb-8 inline-block" href="/case-studies">
+            &lt; Back to case studies
+          </CustomLink>
+          <CaseStudy>{content}</CaseStudy>
+        </div>
+      </Container>
     </>
   );
 }
