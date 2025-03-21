@@ -68,11 +68,10 @@ content:
       - name: name
         label: Name
         type: string
-        required: false
+        required: rue
       - name: body
         label: Bio
         type: rich-text
-        required: true
         required: false
       - name: profile_pic
         label: Profile Pic
