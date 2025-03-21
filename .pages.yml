@@ -65,7 +65,7 @@ content:
     format: yaml-frontmatter
     filename: '{primary}.mdx'
     fields:
-      - name: title
+      - name: name
         label: Name
         type: string
         required: false
