@@ -1,5 +1,6 @@
 import * as fs from 'node:fs';
 import Head from 'next/head';
+import Image from 'next/image';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import { CaseStudy } from '@/components/CaseStudy';
 import { Container } from '@/components/Container';
@@ -23,6 +24,7 @@ export async function generateMetadata({ params }: PageParams) {
 
 export default async function Page({ params }: PageParams) {
   const { content, frontmatter } = await getData({ params });
+  const { slug } = await params;
 
   return (
     <>
@@ -34,6 +36,7 @@ export default async function Page({ params }: PageParams) {
           <CustomLink className="mb-8 inline-block" href="/case-studies">
             &lt; Back to case studies
           </CustomLink>
+          <Image className="mb-8" width="200" height="100" src={`/${slug}.webp`} alt={`${slug} logo`} />
           <CaseStudy>{content}</CaseStudy>
         </div>
       </Container>

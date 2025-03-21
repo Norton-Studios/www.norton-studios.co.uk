@@ -4,6 +4,7 @@ import { Heading } from '@/components/Heading';
 import { Container } from '@/components/Container';
 import { CustomLink } from '@/components/CustomLink';
 import { Paragraph } from '@/components/Paragraph';
+import Image from 'next/image';
 
 export const metadata = {
   title: 'Norton Studios Ltd - Case Studies'
@@ -37,6 +38,7 @@ export default async function CaseStudies() {
                   <Heading className="!text-xl" level="h2">
                     {frontmatter.title}
                   </Heading>
+                  <Image className="mt-4" width="100" height="100" src={`/${frontmatter.slug}.webp`} alt={`${frontmatter.slug} logo`} />
                 </CustomLink>
               </li>
             ))}

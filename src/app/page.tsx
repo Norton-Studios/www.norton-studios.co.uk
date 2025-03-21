@@ -111,6 +111,7 @@ export default async function Home() {
                       <Heading className="!text-xl" level="h2">
                         {frontmatter.title}
                       </Heading>
+                      <Image className="mt-4" width="100" height="100" src={`/${frontmatter.slug}.webp`} alt={`${frontmatter.slug} logo`} />
                     </CustomLink>
                   </li>
                 );
