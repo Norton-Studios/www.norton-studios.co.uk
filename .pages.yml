@@ -1,0 +1,134 @@
+media:
+  input: public/images/uploads
+  output: images/uploads
+  categories: ["image"]
+site:
+  url: https://www.norton-studios.co.uk
+  logo: /small-logo.svg
+content:
+  - name: home
+    label: Home
+    type: file
+    path: src/content/index.mdx
+    fields:
+      - name: heading
+        label: Heading
+        type: string
+        default: Norton Studios
+      - name: subheading
+        label: Subheading
+        type: string
+        default: Provider of Digital Solutions for the Public Sector
+      - name: body
+        label: Content
+        type: rich-text
+        options:
+          image:
+            path: public/images/uploads
+            extensions: [ jpg, jpeg, png ]
+  - name: about-us
+    label: About Us
+    type: file
+    path: src/content/about-us.mdx
+    fields:
+      - name: title
+        label: Title
+        type: string
+        default: About Us
+      - name: body
+        label: Content
+        type: rich-text
+        options:
+          image:
+            path: public/images/uploads
+            extensions: [ jpg, jpeg, png ]
+  - name: how-we-work
+    label: How We Work
+    type: file
+    path: src/content/how-we-work.mdx
+    fields:
+      - name: title
+        label: Title
+        type: string
+        default: How We Work
+      - name: body
+        label: Content
+        type: rich-text
+        options:
+          image:
+            path: public/images/uploads
+            extensions: [ jpg, jpeg, png ]
+  - name: people
+    label: People
+    type: collection
+    path: src/content/people
+    format: yaml-frontmatter
+    filename: '{primary}.mdx'
+    fields:
+      - name: title
+        label: Name
+        type: string
+        required: false
+      - name: body
+        label: Bio
+        type: rich-text
+        required: true
+        required: false
+      - name: profile_pic
+        label: Profile Pic
+        type: image
+        required: false
+      - name: awesomeness
+        label: Awesomeness (determines sort ranking)
+        type: number
+        required: true
+      - name: visible
+        label: Visible
+        type: boolean
+        required: true
+    view:
+      fields: [title, visible]
+      primary: title
+      sort: [ awesomeness, title ]
+      order: desc
+      default:
+        sort: awesomeness
+        order: desc
+  - name: case-studies
+    label: Case Studies
+    type: collection
+    path: src/content/case-studies
+    format: yaml-frontmatter
+    filename: '{primary}.mdx'
+    fields:
+      - name: published
+        label: Published
+        type: boolean
+        required: true
+      - name: featured_image
+        label: Featured Image
+        type: image
+        required: false
+      - name: title
+        label: Title
+        type: string
+        required: false
+      - name: body
+        label: Content
+        type: rich-text
+        required: true
+      - name: date
+        label: Publish Date
+        type: date
+        required: false
+    view:
+      fields: [title, published, date]
+      primary: title
+      sort: [ date, title ]
+      default:
+        sort: date
+        order: desc
+backend:
+  name: github
+  repo: Norton-Studios/www.norton-studios.co.uk
+  branch: master
