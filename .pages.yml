@@ -85,6 +85,7 @@ content:
       - name: visible
         label: Visible
         type: boolean
+        required: false
     view:
       fields: [title, visible]
       primary: title
