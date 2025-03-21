@@ -65,19 +65,7 @@ content:
     format: yaml-frontmatter
     filename: '{primary}.mdx'
     fields:
-      - name: visible
-        label: Visible
-        type: boolean
-        required: true
-      - name: awesomeness
-        label: Awesomeness (determines sort ranking)
-        type: number
-        required: true
-      - name: profile_pic
-        label: Profile Pic
-        type: image
-        required: false
-      - name: name
+      - name: title
         label: Name
         type: string
         required: false
@@ -86,6 +74,18 @@ content:
         type: rich-text
         required: true
         required: false
+      - name: profile_pic
+        label: Profile Pic
+        type: image
+        required: false
+      - name: awesomeness
+        label: Awesomeness (determines sort ranking)
+        type: number
+        required: true
+      - name: visible
+        label: Visible
+        type: boolean
+        required: true
     view:
       fields: [title, visible]
       primary: title
