@@ -5,7 +5,7 @@ type CaseStudyProps = {
   children: ReactNode;
 };
 
-export const CaseStudy = ({ children }: CaseStudyProps) => {
+export const ContentFormatter = ({ children }: CaseStudyProps) => {
   const headingClasses = [
     `[&_h1]:font-bold`,
     `[&_h1]:text-blue-900`,

@@ -11,12 +11,16 @@ export const Header = () => {
 
   const menuItems = [
     {
-      label: 'Services',
-      url: '/services'
+      label: 'How we work',
+      url: '/how-we-work'
     },
     {
       label: 'Case studies',
       url: '/case-studies'
+    },
+    {
+      label: 'People',
+      url: '/people'
     },
     {
       label: 'About Us',
@@ -38,14 +42,14 @@ export const Header = () => {
           />
         </Link>
 
-        <details className="md:hidden">
+        <details className="lg:hidden">
           <summary className="list-none text-xl cursor-pointer">
             <svg width="38" height="38" aria-hidden="true" viewBox="0 0 24 24">
               <path fill="#3B3752" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path>
             </svg>
             <span className="sr-only">Menu</span>
           </summary>
-          <div className="absolute z-10 px-8 py-4 left-0 right-0 top-[54px] w-auto bg-tan-500">
+          <div className="absolute z-10 px-8 py-4 left-0 right-0 top-[80px] w-auto bg-tan-500">
             <nav className="flex flex-col">
               {menuItems.map((item) => {
                 return (
@@ -61,7 +65,7 @@ export const Header = () => {
           </div>
         </details>
 
-        <div className="hidden md:flex max-md:mt-6 max-md:py-6 max-md:border-t-2 max-md:border-t-slate-200 items-center">
+        <div className="hidden lg:flex max-md:mt-6 max-md:py-6 max-md:border-t-2 max-md:border-t-slate-200 items-center">
           <nav>
             {menuItems.map((item) => {
               return (

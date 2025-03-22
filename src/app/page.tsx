@@ -100,7 +100,7 @@ export default async function Home() {
                 See all case studies &gt;
               </CustomLink>
             </div>
-            <ul className="mt-8 xl:mt-0">
+            <ul className="mt-8 xl:mt-0 grid grid-cols-3 gap-4">
               {caseStudiesContent.map(({ frontmatter }, i) => {
                 if (i > 2) {
                   return null;
@@ -108,10 +108,10 @@ export default async function Home() {
                 return (
                   <li key={frontmatter.title}>
                     <CustomLink className="p-6 bg-white hover:bg-tan-500 block h-full mb-6" href={`/case-studies/${frontmatter.slug}`}>
-                      <Heading className="!text-xl" level="h2">
+                      <Heading className="!text-lg" level="h2">
                         {frontmatter.title}
                       </Heading>
-                      <Image className="mt-4" width="100" height="100" src={`/${frontmatter.slug}.webp`} alt={`${frontmatter.slug} logo`} />
+                      <Image className="mt-4" width="100" height="100" src={`/${frontmatter.slug}.webp`} alt={`${frontmatter.title} logo`} />
                     </CustomLink>
                   </li>
                 );
