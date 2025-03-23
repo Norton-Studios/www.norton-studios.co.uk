@@ -1,14 +1,23 @@
 ---
-title: Norton Studios Case Study - Planning Inspectorate
+title: Planning Inspectorate
 ---
 
 # Planning Inspectorate
 
 The Planning Inspectorate is an executive agency of the Ministry of Housing, Communities and Local Government. It deals with planning appeals, national infrastructure planning applications, examinations of local plans, and other planning-related and specialist casework across England and Wales.
 
-## Case study
+With a range of inspectors through the UK, the Planning Inspectorate needed a way to manage the scheduling of their case work. In order to construct a buy build vs buy analysis, Norton Studios was engaged to prototype a solution.
 
-Discovery and prototype of Scheduling and Listing service.
+## Solution
 
-Integrate with Outlook and display using PowerBI.
+Using our experience of the gov.uk frontend libraries we rapidly developed and deployed a prototype application using Node.js and Nunjucks.
 
+The prototype implemented novell algorithms to schedule case work according to case age, location and inspector specialisms.
+
+We integrated with the [Azure Graph API](https://learn.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0) to schedule site visits in inspector calendars and the [GOV.UK Notify](https://www.notifications.service.gov.uk/) system to send reminders about their case work.
+
+## Impact
+
+Working with a range of data scientists, BA's and end users our prototype was able to demonstrate the potential benefits of a building a scheduling and listing service in-house or buying a COTS product.
+
+The prototype went beyond the initial requirements and enabled the team at the Planning Inspectorate to see the potential of a more integrated approach to their case work.
