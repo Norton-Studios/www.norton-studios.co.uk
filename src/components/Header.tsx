@@ -72,7 +72,7 @@ export const Header = () => {
                 <CustomLink
                   key={item.url}
                   href={item.url}
-                  className="text-lg relative font-bold p-4 hover:no-underline hover:after:content-[''] hover:after:h-1 hover:after:w-full hover:after:block hover:after:absolute hover:after:bottom-0 hover:after:left-0 hover:after:bg-yellow-500 hover:after:mt-2 after:transition-all after:duration-300 after:ease-in-out focus:text-blue-900 focus:no-underline focus:after:content-[''] focus:after:h-1 focus:after:w-full focus:after:block focus:after:absolute focus:after:bottom-0 focus:after:left-0 focus:after:bg-yellow-500 focus:after:mt-2"
+                  className="text-lg relative font-bold p-4 mx-2 hover:no-underline hover:after:content-[''] hover:after:h-1 hover:after:w-full hover:after:block hover:after:absolute hover:after:bottom-0 hover:after:left-0 hover:after:bg-yellow-500 hover:after:mt-2 after:transition-all after:duration-300 after:ease-in-out focus:text-blue-900 focus:no-underline focus:after:content-[''] focus:after:h-1 focus:after:w-full focus:after:block focus:after:absolute focus:after:bottom-0 focus:after:left-0 focus:after:bg-yellow-500 focus:after:mt-2"
                 >
                   {item.label}
                 </CustomLink>
