@@ -24,6 +24,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  if (process.env.NODE_ENV === 'production') {
+    return <html><body><h1>Norton Studios Ltd</h1><p>New website coming soon</p></body></html>
+  }
+
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
