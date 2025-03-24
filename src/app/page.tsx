@@ -40,8 +40,8 @@ export default async function Home() {
             <div>
               <Image
                 className="mx-auto lg:m-none mb-20 lg:mb-0 w-[184px] h-180px] lg:w-[456px] lg:h-[448px]"
-                src="/best-practice.webp"
-                alt="Placeholder image"
+                src="/best-practices.webp"
+                alt="Image showing logos realating ot web bext practices"
                 width={456}
                 height={448}
               />
