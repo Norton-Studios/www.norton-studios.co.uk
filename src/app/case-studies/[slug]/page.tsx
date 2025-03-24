@@ -31,7 +31,7 @@ export default async function Page({ params }: PageParams) {
         <CustomLink className="mb-8 inline-block" href="/case-studies">
           &lt; Back to case studies
         </CustomLink>
-        <Image className="mb-8" width="200" height="100" src={`/${slug}.webp`} alt={`${slug} logo`} />
+        <Image className="mb-12" width="200" height="100" src={`/${slug}.webp`} alt={`${slug} logo`} />
         <ContentFormatter>{content}</ContentFormatter>
       </div>
     </Container>

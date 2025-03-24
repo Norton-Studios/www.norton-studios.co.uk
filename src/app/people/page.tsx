@@ -19,12 +19,12 @@ export default async function CaseStudies() {
 
   return (
     <>
-      <div className="bg-repeat-x bg-[center_bottom] bg-yellow_bottom pb-[180px] mb-[-2px]">
+      <div className="bg-repeat-x bg-[center_bottom] bg-yellow_bottom pb-[200px] lg:pb-[220px] pt-4 lg:pt-8 mb-[-2px]">
         <Container>
-          <Heading level="h1" className="!leading-[1.2]">
+          <Heading level="h1" underline className="!leading-[1.2] md:w-1/2 lg:w-1/3">
             Our people
           </Heading>
-          <Paragraph className="mt-4 leading-[2]">Just some of the talented people who make up Norton Studios.</Paragraph>
+          <Paragraph className="mt-6 leading-[2]">Just some of the talented people who make up Norton Studios.</Paragraph>
         </Container>
       </div>
 

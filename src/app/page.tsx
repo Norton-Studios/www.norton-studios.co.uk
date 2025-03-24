@@ -17,25 +17,19 @@ export default async function Home() {
 
   return (
     <>
-      <div className="bg-blue_bottom bg-repeat-x bg-[center_bottom] pb-[180px] mb-[-2px]">
+      <div className="bg-blue_bottom bg-repeat-x bg-[center_bottom] pb-[200px] lg:pb-[280px] pt-4 lg:pt-8 mb-[-2px]">
         <Container className="lg:grid lg:grid-cols-2 lg:gap-4">
           <div className="xl:ml-20">
-            <Heading level="h1" className="!leading-[1.2]">
+            <Heading level="h1" underline className="!leading-[1.2]">
               Provider of Digital Solutions for the Public Sector
             </Heading>
-            <Paragraph className="mt-8 leading-[2]">
+            <Paragraph className="mt-10 leading-[2]">
               Norton Studios is a trusted public sector delivery partner. We specialise in Government Digital Services across the UK, with a particular focus on
               Accessibility (WCAG 2.1/2.2) and Responsive Website design.
             </Paragraph>
           </div>
           <div className="align-middle hidden lg:flex">
-            <Image
-              className="mx-auto mt-8 lg:md-0 w-[60px] h-[60px] lg:w-[137px] lg:h-[138px]"
-              src="/hero-logo.svg"
-              alt="Norton Studios Logo"
-              width={137}
-              height={138}
-            />
+            <Image className="mx-auto mt-8 lg:mt-0 lg:w-[281px] lg:h-[278px]" src="/hero-logo.svg" alt="Norton Studios Logo" width={281} height={278} />
           </div>
         </Container>
       </div>
@@ -100,7 +94,7 @@ export default async function Home() {
                 See all case studies &gt;
               </CustomLink>
             </div>
-            <ul className="mt-8 xl:mt-0 grid grid-cols-3 gap-4">
+            <ul className="mt-8 xl:mt-0 lg:grid lg:grid-cols-3 lg:gap-4">
               {caseStudiesContent.map(({ frontmatter }, i) => {
                 if (i > 2) {
                   return null;

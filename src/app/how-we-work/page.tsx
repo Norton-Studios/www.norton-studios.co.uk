@@ -15,7 +15,7 @@ export default async function Page() {
 
   return (
     <Container>
-      <div className="max-w-3xl mx-auto mb-10 lg:mb-20">
+      <div className="max-w-3xl mx-auto mb-10 lg:mb-20 pt-4 lg:pt-8">
         <ContentFormatter>{content}</ContentFormatter>
       </div>
     </Container>

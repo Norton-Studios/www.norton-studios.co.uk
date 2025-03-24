@@ -7,7 +7,7 @@ import { twMerge } from 'tailwind-merge';
 export const Header = () => {
   const buttonClasses =
     'flex hover:underline hover:underline-offset-4 p-2 md:px-4 md:py-3 ml-2 md:ml-6 text-blue-900 bg-yellow-500 font-bold hover:bg-yellow-400';
-  const mobileLinkClasses = 'px-2 py-4 hover:underline hover:underline-offset-4';
+  const mobileLinkClasses = 'px-2 py-4';
 
   const menuItems = [
     {
@@ -33,11 +33,11 @@ export const Header = () => {
       <Container className="flex justify-between align-middle items-center relative">
         <Link href="/">
           <Image
-            className="dark:invert w-[122px] h-[36px] md:w-[183px] md:h-[54px]"
-            src="/logo-new.svg"
+            className="dark:invert w-[151px] h-[76px] md:w-[202px] md:h-[102px]"
+            src="/colour-logo.svg"
             alt="Norton Studios Logo"
-            width={245}
-            height={72}
+            width={604}
+            height={307}
             priority
           />
         </Link>
@@ -69,7 +69,11 @@ export const Header = () => {
           <nav>
             {menuItems.map((item) => {
               return (
-                <CustomLink key={item.url} href={item.url} className="text-lg font-bold p-4">
+                <CustomLink
+                  key={item.url}
+                  href={item.url}
+                  className="text-lg relative font-bold p-4 hover:no-underline hover:after:content-[''] hover:after:h-1 hover:after:w-full hover:after:block hover:after:absolute hover:after:bottom-0 hover:after:left-0 hover:after:bg-yellow-500 hover:after:mt-2 after:transition-all after:duration-300 after:ease-in-out focus:text-blue-900 focus:no-underline focus:after:content-[''] focus:after:h-1 focus:after:w-full focus:after:block focus:after:absolute focus:after:bottom-0 focus:after:left-0 focus:after:bg-yellow-500 focus:after:mt-2"
+                >
                   {item.label}
                 </CustomLink>
               );

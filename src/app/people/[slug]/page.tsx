@@ -33,7 +33,7 @@ export default async function Page({ params }: PageParams) {
         <CustomLink className="mb-8 inline-block" href="/people">
           &lt; Back to people
         </CustomLink>
-        <Heading level="h1" className="mb-8">
+        <Heading level="h1" underline className="mb-12">
           {formattedName}
         </Heading>
         <Heading level="h2" className="mb-6">
