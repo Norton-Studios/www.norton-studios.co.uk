@@ -31,7 +31,7 @@ export default async function CaseStudies() {
       <div className="bg-yellow-500 py-[80px]">
         <Container>
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
-            {peopleContent.map(({ frontmatter }) => {
+            {peopleContent.toSorted((a, b) => a.frontmatter.awesomeness - b.frontmatter.awesomeness).map(({ frontmatter }) => {
               const formattedName = frontmatter.slug.replace('-', ' ').replace(/\b\w/g, (char: string) => char.toUpperCase());
 
               return (
@@ -41,7 +41,6 @@ export default async function CaseStudies() {
                       {formattedName}
                     </Heading>
                     <Paragraph>{frontmatter.title}</Paragraph>
-                    <Paragraph>Awesomeness rating: {frontmatter.awesomeness}</Paragraph>
                   </CustomLink>
                 </li>
               );
@@ -54,7 +53,7 @@ export default async function CaseStudies() {
 }
 
 async function getContent(file: string) {
-  const content = await compileMDX<{ title: string; slug: string; awesomeness: string }>({
+  const content = await compileMDX<{ title: string; slug: string; awesomeness: number }>({
     source: fs.readFileSync(`src/content/people/${file}`, 'utf-8'),
     options: {
       parseFrontmatter: true,
