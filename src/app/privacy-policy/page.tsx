@@ -4,12 +4,12 @@ import { ContentFormatter } from '@/components/ContentFormatter';
 import { Container } from '@/components/Container';
 
 export const metadata = {
-  title: 'Norton Studios - About Us'
+  title: 'Norton Studios - Privacy Policy'
 };
 
 export default async function Page() {
   const { content } = await compileMDX<{ title: string }>({
-    source: fs.readFileSync(`src/content/about-us.mdx`, 'utf-8'),
+    source: fs.readFileSync(`src/content/privacy-policy.mdx`, 'utf-8'),
     options: { parseFrontmatter: true }
   });
 

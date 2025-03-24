@@ -4,8 +4,8 @@ import { CustomLink } from '@/components/CustomLink';
 
 const links = [
   {
-    href: '/terms-of-use',
-    text: 'Terms of use'
+    href: '/talk-to-us',
+    text: 'Contact us'
   },
   {
     href: '/privacy-policy',
