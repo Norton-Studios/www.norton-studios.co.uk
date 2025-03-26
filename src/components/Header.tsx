@@ -32,14 +32,7 @@ export const Header = () => {
     <header className="py-4 md:py-8">
       <Container className="flex justify-between align-middle items-center relative">
         <Link href="/">
-          <Image
-            className="dark:invert w-[151px] h-[76px] md:w-[202px] md:h-[102px]"
-            src="/colour-logo.svg"
-            alt="Norton Studios Logo"
-            width={604}
-            height={307}
-            priority
-          />
+          <Image className="w-[151px] h-[76px] md:w-[202px] md:h-[102px]" src="/colour-logo.svg" alt="Norton Studios Logo" width={604} height={307} priority />
         </Link>
 
         <details className="lg:hidden">
