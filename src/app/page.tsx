@@ -6,6 +6,7 @@ import { Container } from '@/components/Container';
 import { Heading } from '@/components/Heading';
 import { CustomLink } from '@/components/CustomLink';
 import { Paragraph } from '@/components/Paragraph';
+import { ButtonVariant } from '@/components/Button';
 
 export default async function Home() {
   const caseStudies = fs
@@ -57,11 +58,7 @@ export default async function Home() {
                   Coding in the open
                 </CustomLink>{' '}
                 and are practitioners of the{' '}
-                <CustomLink
-                  variant="yellow"
-                  target="_blank"
-                  href="https://gds-way.digital.cabinet-office.gov.uk/"
-                >
+                <CustomLink variant="yellow" target="_blank" href="https://gds-way.digital.cabinet-office.gov.uk/">
                   GDS Way
                 </CustomLink>
                 .
@@ -88,10 +85,11 @@ export default async function Home() {
               </Heading>
               <Paragraph>Some of the projects we have been involved with</Paragraph>
               <CustomLink
+                asButtonVariant={ButtonVariant.PRIMARY}
                 href="/case-studies"
-                className="inline-block mt-4 hover:underline hover:underline-offset-4 p-2 md:px-4 md:py-3 text-white bg-blue-900 font-bold hover:bg-blue-800"
+                className="mt-4 hover:border-white active:outline-white focus:outline-white"
               >
-                See all case studies &gt;
+                See all case studies
               </CustomLink>
             </div>
             <ul className="mt-8 xl:mt-0 lg:grid lg:grid-cols-3 lg:gap-4">

@@ -1,51 +1,17 @@
-"use client"
-
-import { useForm, ValidationError } from '@formspree/react';
+import { Heading } from '@/components/Heading';
+import { Container } from '@/components/Container';
+import { ContactForm } from '@/components/ContactForm';
 
 export default function ContactPage() {
-  const [state, submit, reset] = useForm('mrbpldye');
-
-  if (state.submitting) {
-    return <p>Submitting…</p>;
-  }
-
-  if (state.succeeded) {
-    return (
-      <div>
-        <p>Thanks!</p>;<button onClick={reset}>Reset</button>
-      </div>
-    );
-  }
-
   return (
-    <div>
-      <h1>Form</h1>
-      <form onSubmit={submit}>
-        <label htmlFor="email">Email</label>
-        <input
-          id="email"
-          type="email"
-          name="email"
-          defaultValue="test@example.com"
-        />
-        <ValidationError
-          prefix="Email"
-          field="email"
-          errors={state.errors}
-        />
-        <textarea
-          id="message"
-          name="message"
-        />
-        <ValidationError
-          prefix="Message"
-          field="message"
-          errors={state.errors}
-        />
+    <div className="bg-repeat-x bg-[center_bottom] bg-blue_bottom pb-[200px] md:pb-[280px] pt-4 lg:pt-8 mb-[-2px]">
+      <Container className="max-w-3xl mx-auto h-min-800px">
+        <Heading level="h1" underline className="!leading-[1.2] md:w-1/2">
+          Contact us
+        </Heading>
 
-        <button type="submit">Sign up</button>
-
-      </form>
+        <ContactForm />
+      </Container>
     </div>
   );
 }
