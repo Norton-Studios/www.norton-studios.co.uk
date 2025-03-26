@@ -1,7 +1,7 @@
 import * as fs from 'node:fs';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import { ContentFormatter } from '@/components/ContentFormatter';
-import { Container } from '@/components/Container';
+import { MarkdownPageContainer } from '@/components/MarkdownPageContainer';
 
 export const metadata = {
   title: 'Norton Studios - About Us'
@@ -14,13 +14,9 @@ export default async function Page() {
   });
 
   return (
-    <>
-      <Container>
-        <div className="max-w-3xl mx-auto mb-10 lg:mb-20 pt-4 lg:pt-8">
-          <ContentFormatter>{content}</ContentFormatter>
-        </div>
-      </Container>
-    </>
+    <MarkdownPageContainer>
+      <ContentFormatter>{content}</ContentFormatter>
+    </MarkdownPageContainer>
   );
 }
 

@@ -52,7 +52,7 @@ export const Header = () => {
                 );
               })}
             </nav>
-            <Link href="/talk-to-us" className={twMerge(buttonClasses, 'inline-block text-center px-6 my-4')}>
+            <Link href="/contact-us" className={twMerge(buttonClasses, 'inline-block text-center px-6 my-4')}>
               Talk to us!
             </Link>
           </div>
@@ -72,7 +72,7 @@ export const Header = () => {
               );
             })}
           </nav>
-          <Link href="/talk-to-us" className={buttonClasses}>
+          <Link href="/contact-us" className={buttonClasses}>
             Talk to us!
           </Link>
         </div>

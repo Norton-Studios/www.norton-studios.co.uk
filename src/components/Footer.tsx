@@ -4,7 +4,7 @@ import { CustomLink } from '@/components/CustomLink';
 
 const links = [
   {
-    href: '/talk-to-us',
+    href: '/contact-us',
     text: 'Contact us'
   },
   {
