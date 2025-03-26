@@ -2,11 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Container } from '@/components/Container';
 import { CustomLink } from '@/components/CustomLink';
-import { twMerge } from 'tailwind-merge';
+import { ButtonVariant } from './Button';
 
 export const Header = () => {
-  const buttonClasses =
-    'flex hover:underline hover:underline-offset-4 p-2 md:px-4 md:py-3 ml-2 md:ml-6 text-blue-900 bg-yellow-500 font-bold hover:bg-yellow-400';
   const mobileLinkClasses = 'px-2 py-4';
 
   const menuItems = [
@@ -48,9 +46,9 @@ export const Header = () => {
                 );
               })}
             </nav>
-            <Link href="/contact-us" className={twMerge(buttonClasses, 'inline-block text-center px-6 my-4')}>
+            <CustomLink href="/contact-us" asButtonVariant={ButtonVariant.SECONDARY}>
               Talk to us!
-            </Link>
+            </CustomLink>
           </div>
         </details>
 
@@ -68,9 +66,9 @@ export const Header = () => {
               );
             })}
           </nav>
-          <Link href="/contact-us" className={buttonClasses}>
+          <CustomLink href="/contact-us" asButtonVariant={ButtonVariant.SECONDARY}>
             Talk to us!
-          </Link>
+          </CustomLink>
         </div>
       </Container>
     </header>

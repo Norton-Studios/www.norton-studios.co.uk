@@ -3,6 +3,7 @@
 import { useForm, ValidationError } from '@formspree/react';
 import { Paragraph } from '@/components/Paragraph';
 import { Heading } from '@/components/Heading';
+import { Button, ButtonVariant } from '@/components/Button';
 
 export const ContactForm = () => {
   const [state, handleSubmit] = useForm('mrbpldye');
@@ -64,12 +65,9 @@ export const ContactForm = () => {
         <ValidationError prefix="Message" field="message" errors={state.errors} />
       </div>
 
-      <button
-        className="inline-block mt-4 hover:underline hover:underline-offset-4 p-2 md:px-4 md:py-3 text-white bg-blue-900 font-bold hover:bg-blue-800"
-        type="submit"
-      >
+      <Button variant={ButtonVariant.PRIMARY} type="submit">
         Send your message
-      </button>
+      </Button>
     </form>
   );
 };
