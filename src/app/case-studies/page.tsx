@@ -32,16 +32,18 @@ export default async function CaseStudies() {
       <div className="bg-yellow-500 py-[80px]">
         <Container>
           <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
-            {caseStudiesContent.map(({ frontmatter }) => (
-              <li key={frontmatter.title}>
-                <CustomLink className="p-6 bg-white hover:bg-tan-500 block h-full" href={`/case-studies/${frontmatter.slug}`}>
-                  <Heading className="!text-xl" level="h2">
-                    {frontmatter.title}
-                  </Heading>
-                  <Image className="mt-4" width="100" height="100" src={`/${frontmatter.slug}.webp`} alt={`${frontmatter.slug} logo`} />
-                </CustomLink>
-              </li>
-            ))}
+            {caseStudiesContent
+              .filter(({ frontmatter }) => frontmatter.published)
+              .map(({ frontmatter }) => (
+                <li key={frontmatter.title}>
+                  <CustomLink className="p-6 bg-white hover:bg-tan-500 block h-full" href={`/case-studies/${frontmatter.slug}`}>
+                    <Heading className="!text-xl" level="h2">
+                      {frontmatter.title}
+                    </Heading>
+                    <Image className="mt-4" width="100" height="100" src={`/${frontmatter.slug}.webp`} alt={`${frontmatter.slug} logo`} />
+                  </CustomLink>
+                </li>
+              ))}
           </ul>
         </Container>
       </div>
@@ -50,7 +52,7 @@ export default async function CaseStudies() {
 }
 
 async function getContent(file: string) {
-  const content = await compileMDX<{ title: string; slug: string }>({
+  const content = await compileMDX<{ title: string; slug: string; published: boolean; awesomeness: string }>({
     source: fs.readFileSync(`src/content/case-studies/${file}`, 'utf-8'),
     options: {
       parseFrontmatter: true,

@@ -95,21 +95,23 @@ export default async function Home() {
               </CustomLink>
             </div>
             <ul className="mt-8 xl:mt-0 lg:grid lg:grid-cols-3 lg:gap-4">
-              {caseStudiesContent.map(({ frontmatter }, i) => {
-                if (i > 2) {
-                  return null;
-                }
-                return (
-                  <li key={frontmatter.title}>
-                    <CustomLink className="p-6 bg-white hover:bg-tan-500 block h-full mb-6" href={`/case-studies/${frontmatter.slug}`}>
-                      <Heading className="!text-lg" level="h2">
-                        {frontmatter.title}
-                      </Heading>
-                      <Image className="mt-4" width="100" height="100" src={`/${frontmatter.slug}.webp`} alt={`${frontmatter.title} logo`} />
-                    </CustomLink>
-                  </li>
-                );
-              })}
+              {caseStudiesContent
+                .filter(({ frontmatter }) => frontmatter.published)
+                .map(({ frontmatter }, i) => {
+                  if (i > 2) {
+                    return null;
+                  }
+                  return (
+                    <li key={frontmatter.title}>
+                      <CustomLink className="p-6 bg-white hover:bg-tan-500 block h-full mb-6" href={`/case-studies/${frontmatter.slug}`}>
+                        <Heading className="!text-lg" level="h2">
+                          {frontmatter.title}
+                        </Heading>
+                        <Image className="mt-4" width="100" height="100" src={`/${frontmatter.slug}.webp`} alt={`${frontmatter.title} logo`} />
+                      </CustomLink>
+                    </li>
+                  );
+                })}
             </ul>
           </div>
         </Container>
@@ -119,7 +121,7 @@ export default async function Home() {
 }
 
 async function getContent(file: string) {
-  const content = await compileMDX<{ title: string; slug: string }>({
+  const content = await compileMDX<{ title: string; slug: string; published: boolean }>({
     source: fs.readFileSync(`src/content/case-studies/${file}`, 'utf-8'),
     options: {
       parseFrontmatter: true,
