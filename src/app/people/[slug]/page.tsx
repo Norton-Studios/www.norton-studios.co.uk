@@ -30,7 +30,7 @@ export default async function Page({ params }: PageParams) {
   return (
     <Container>
       <div className="max-w-3xl mx-auto mb-10 lg:mb-20">
-        <CustomLink className="mb-8 inline-block" href="/people">
+        <CustomLink className="mb-8 inline-block" href="/about-us#people">
           &lt; Back to people
         </CustomLink>
         <Heading level="h1" underline className="mb-12">

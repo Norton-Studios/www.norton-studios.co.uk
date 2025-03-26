@@ -60,7 +60,7 @@ export default async function Home() {
                 <CustomLink
                   variant="yellow"
                   target="_blank"
-                  href="https://gds-way.digital.cabinet-office.gov.uk/standards/programming-languages.html#programming-languages"
+                  href="https://gds-way.digital.cabinet-office.gov.uk/"
                 >
                   GDS Way
                 </CustomLink>
