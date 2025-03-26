@@ -1,6 +1,7 @@
 media:
   input: public/images/uploads
   output: images/uploads
+  icon: image
   categories: ["image"]
 site:
   url: https://www.norton-studios.co.uk
@@ -86,6 +87,7 @@ content:
         type: boolean
         required: false
     view:
+      icon: book-user
       fields: [title, awesomeness, visible]
       primary: title
       sort: [ awesomeness, title ]
