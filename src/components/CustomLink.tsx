@@ -26,6 +26,7 @@ export const CustomLink = ({ children, href, target, variant = 'blue', asButtonV
       {...props}
     >
       {children}
+      {target === '_blank' && <span className="sr-only"> (opens in a new tab)</span>}
     </Link>
   );
 };
