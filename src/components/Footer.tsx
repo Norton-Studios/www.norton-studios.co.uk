@@ -21,7 +21,7 @@ export const Footer = () => {
   return (
     <footer className="bg-blue-900 py-[100px]">
       <Container className="flex flex-col">
-        <ul className="mx-auto mb-4">
+        <ul className="mx-auto mb-8">
           {links.map((link, i) => {
             const linksLength = links.length - 1;
             return (
@@ -29,7 +29,7 @@ export const Footer = () => {
                 <CustomLink
                   href={link.href}
                   variant="yellow"
-                  className={twMerge('px-2 lg:px-4 leading-none', i < linksLength && 'border-r-2 border-yellow-500')}
+                  className={twMerge('px-2 lg:px-4 leading-none no-underline hover:underline text-lg', i < linksLength && 'border-r-2 border-yellow-500')}
                 >
                   {link.text}
                 </CustomLink>
@@ -37,7 +37,7 @@ export const Footer = () => {
             );
           })}
         </ul>
-        <p className="text-center text-white">&copy; {new Date().getFullYear()} Norton Studios</p>
+        <p className="text-center text-white text-lg">&copy; {new Date().getFullYear()} Norton Studios</p>
       </Container>
     </footer>
   );

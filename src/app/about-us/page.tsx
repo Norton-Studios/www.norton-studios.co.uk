@@ -2,7 +2,6 @@ import fs from 'node:fs';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import { Heading } from '@/components/Heading';
 import { Container } from '@/components/Container';
-import { CustomLink } from '@/components/CustomLink';
 import { Paragraph } from '@/components/Paragraph';
 import { ContentFormatter } from '@/components/ContentFormatter';
 
@@ -46,12 +45,15 @@ export default async function People() {
 
                 return (
                   <li key={frontmatter.title}>
-                    <CustomLink className="p-6 bg-white hover:bg-tan-500 block h-full" href={`/people/${frontmatter.slug}`}>
+                    <a
+                      className="block p-6 pb-4 bg-white hover:bg-tan-500 transition-all duration-300 h-full mb-6 border-b-8 border-white hover:border-blue-900"
+                      href={`/people/${frontmatter.slug}`}
+                    >
                       <Heading className="!text-xl" level="h2">
                         {formattedName}
                       </Heading>
-                      <Paragraph>{frontmatter.title}</Paragraph>
-                    </CustomLink>
+                      <Paragraph className="mb-0">{frontmatter.title}</Paragraph>
+                    </a>
                   </li>
                 );
               })}

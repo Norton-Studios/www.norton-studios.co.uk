@@ -2,7 +2,6 @@ import fs from 'node:fs';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import { Heading } from '@/components/Heading';
 import { Container } from '@/components/Container';
-import { CustomLink } from '@/components/CustomLink';
 import { Paragraph } from '@/components/Paragraph';
 import Image from 'next/image';
 
@@ -36,12 +35,15 @@ export default async function CaseStudies() {
               .filter(({ frontmatter }) => frontmatter.published)
               .map(({ frontmatter }) => (
                 <li key={frontmatter.title}>
-                  <CustomLink className="p-6 bg-white hover:bg-tan-500 block h-full" href={`/case-studies/${frontmatter.slug}`}>
+                  <a
+                    className="flex flex-col justify-between p-6 pb-4 bg-white hover:bg-tan-500 transition-all duration-300 h-full mb-6 border-b-8 border-white hover:border-blue-900"
+                    href={`/case-studies/${frontmatter.slug}`}
+                  >
                     <Heading className="!text-xl" level="h2">
                       {frontmatter.title}
                     </Heading>
-                    <Image className="mt-4" width="100" height="100" src={`/${frontmatter.slug}.webp`} alt={`${frontmatter.slug} logo`} />
-                  </CustomLink>
+                    <Image width="100" height="100" src={`/${frontmatter.slug}.webp`} alt={`${frontmatter.slug} logo`} />
+                  </a>
                 </li>
               ))}
           </ul>

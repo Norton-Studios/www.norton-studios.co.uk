@@ -35,12 +35,12 @@ export default async function Home() {
         </Container>
       </div>
 
-      <div className="bg-blue-900 py-[50px] lg:py-[100px]">
+      <div className="bg-blue-900 pt-[30px] pb-[50px] lg:pt-[80px] lg:pb-[100px] ">
         <Container>
           <div className="lg:grid lg:grid-cols-2 lg:gap-4">
             <div>
               <Image
-                className="mx-auto lg:m-none mb-20 lg:mb-0 w-[184px] h-180px] lg:w-[456px] lg:h-[448px]"
+                className="mx-auto lg:m-none mb-10 lg:mb-0 w-[184px] h-180px] lg:w-[456px] lg:h-[448px]"
                 src="/best-practices.webp"
                 alt="Image showing logos realating ot web bext practices"
                 width={456}
@@ -101,12 +101,15 @@ export default async function Home() {
                   }
                   return (
                     <li key={frontmatter.title}>
-                      <CustomLink className="p-6 bg-white hover:bg-tan-500 block h-full mb-6" href={`/case-studies/${frontmatter.slug}`}>
+                      <a
+                        className="flex flex-col justify-between p-6 pb-4 bg-white hover:bg-tan-500 transition-all duration-300 h-full mb-6 border-b-8 border-white hover:border-blue-900"
+                        href={`/case-studies/${frontmatter.slug}`}
+                      >
                         <Heading className="!text-lg" level="h2">
                           {frontmatter.title}
                         </Heading>
                         <Image className="mt-4" width="100" height="100" src={`/${frontmatter.slug}.webp`} alt={`${frontmatter.title} logo`} />
-                      </CustomLink>
+                      </a>
                     </li>
                   );
                 })}

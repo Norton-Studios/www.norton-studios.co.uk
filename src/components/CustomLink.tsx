@@ -15,7 +15,7 @@ const classes = {
   yellow: ['text-yellow-500', 'focus:text-white']
 };
 
-const commonClasses = 'hover:underline focus:outline-none focus:underline';
+const commonClasses = 'underline hover:no-underline focus:outline-none focus:underline';
 
 export const CustomLink = ({ children, href, target, variant = 'blue', asButtonVariant, className, ...props }: CustomLinkProps) => {
   return (
