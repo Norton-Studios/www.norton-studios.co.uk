@@ -17,7 +17,7 @@ export const Header = () => {
       url: '/case-studies'
     },
     {
-      label: 'About Us',
+      label: 'About us',
       url: '/about-us'
     }
   ];
