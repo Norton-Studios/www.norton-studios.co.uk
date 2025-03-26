@@ -5,7 +5,7 @@ import { CustomLink } from '@/components/CustomLink';
 import { ButtonVariant } from './Button';
 
 export const Header = () => {
-  const mobileLinkClasses = 'px-2 py-4';
+  const mobileLinkClasses = 'px-2 py-4 no-underline';
 
   const menuItems = [
     {
@@ -24,6 +24,9 @@ export const Header = () => {
 
   return (
     <header className="py-4 md:py-8">
+      <a href="#main" className="sr-only">
+        Skip to content
+      </a>
       <Container className="flex justify-between align-middle items-center relative">
         <Link href="/">
           <Image className="w-[151px] h-[76px] md:w-[202px] md:h-[102px]" src="/colour-logo.svg" alt="Norton Studios Logo" width={604} height={307} priority />
@@ -59,7 +62,7 @@ export const Header = () => {
                 <CustomLink
                   key={item.url}
                   href={item.url}
-                  className="text-lg relative font-bold p-4 mx-2 hover:no-underline hover:after:content-[''] hover:after:h-1 hover:after:w-full hover:after:block hover:after:absolute hover:after:bottom-0 hover:after:left-0 hover:after:bg-yellow-500 hover:after:mt-2 after:transition-all after:duration-300 after:ease-in-out focus:text-blue-900 focus:no-underline focus:after:content-[''] focus:after:h-1 focus:after:w-full focus:after:block focus:after:absolute focus:after:bottom-0 focus:after:left-0 focus:after:bg-yellow-500 focus:after:mt-2"
+                  className="text-lg relative font-bold p-4 mx-2 no-underline hover:after:content-[''] hover:after:h-1 hover:after:w-full hover:after:block hover:after:absolute hover:after:bottom-0 hover:after:left-0 hover:after:bg-yellow-500 hover:after:mt-2 after:transition-all after:duration-300 after:ease-in-out focus:text-blue-900 focus:no-underline focus:after:content-[''] focus:after:h-1 focus:after:w-full focus:after:block focus:after:absolute focus:after:bottom-0 focus:after:left-0 focus:after:bg-yellow-500 focus:after:mt-2"
                 >
                   {item.label}
                 </CustomLink>
