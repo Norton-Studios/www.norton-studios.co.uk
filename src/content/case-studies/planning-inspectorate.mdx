@@ -1,23 +1,31 @@
 ---
-title: Planning Inspectorate
+published: true
+title: "Planning Inspectorate: Prototyping Smarter Case Scheduling"
+awesomeness: 0
 ---
-
 # Planning Inspectorate
 
-The Planning Inspectorate is an executive agency of the Ministry of Housing, Communities and Local Government. It deals with planning appeals, national infrastructure planning applications, examinations of local plans, and other planning-related and specialist casework across England and Wales.
+The Planning Inspectorate oversees planning appeals, national infrastructure applications, and local plan examinations across England and Wales. With inspectors operating nationwide, they required a structured way to manage and schedule casework efficiently. Norton Studios was engaged to prototype a solution and assess the feasibility of an in-house system versus a commercial off-the-shelf (COTS) product.
 
-With a range of inspectors through the UK, the Planning Inspectorate needed a way to manage the scheduling of their case work. In order to construct a buy build vs buy analysis, Norton Studios was engaged to prototype a solution.
+#### **Problem**
 
-## Solution
+The existing scheduling process lacked automation, making it difficult to efficiently assign casework based on inspector availability, location, and expertise.
 
-Using our experience of the gov.uk frontend libraries we rapidly developed and deployed a prototype application using Node.js and Nunjucks.
+#### **Solution**
 
-The prototype implemented novell algorithms to schedule case work according to case age, location and inspector specialisms.
+Norton Studios:
 
-We integrated with the [Azure Graph API](https://learn.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0) to schedule site visits in inspector calendars and the [GOV.UK Notify](https://www.notifications.service.gov.uk/) system to send reminders about their case work.
+*   Developed and deployed a rapid prototype using Node.js and Nunjucks, leveraging [GOV.UK](http://GOV.UK) frontend libraries.
+    
+*   Implemented novel algorithms to optimise case scheduling by case age, location, and inspector specialism.
+    
+*   Integrated with Azure Graph API for automatic calendar scheduling and [GOV.UK](http://GOV.UK) Notify for casework reminders.
+    
 
-## Impact
+#### **Impact**
 
-Working with a range of data scientists, BA's and end users our prototype was able to demonstrate the potential benefits of a building a scheduling and listing service in-house or buying a COTS product.
+✅ **Improved decision-making** – Provided the Inspectorate with clear insights into the benefits of building vs. buying a scheduling system.  
+✅ **Enhanced scheduling efficiency** – Demonstrated how automation could streamline case assignments and reduce administrative overhead.  
+✅ **Future-ready approach** – Showed the potential for a fully integrated, data-driven case management system.
 
-The prototype went beyond the initial requirements and enabled the team at the Planning Inspectorate to see the potential of a more integrated approach to their case work.
+The prototype exceeded expectations, highlighting the value of a tailored scheduling solution and influencing the Planning Inspectorate’s long-term technology strategy.

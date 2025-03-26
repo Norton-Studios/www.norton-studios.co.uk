@@ -1,6 +1,7 @@
 media:
   input: public/images/uploads
   output: images/uploads
+  icon: image
   categories: ["image"]
 site:
   url: https://www.norton-studios.co.uk
@@ -8,6 +9,7 @@ site:
 content:
   - name: home
     label: Home
+    icon: house
     type: file
     path: src/content/index.mdx
     fields:
@@ -28,6 +30,7 @@ content:
             extensions: [ jpg, jpeg, png ]
   - name: about-us
     label: About Us
+    icon: info
     type: file
     path: src/content/about-us.mdx
     fields:
@@ -60,13 +63,15 @@ content:
             extensions: [ jpg, jpeg, png ]
   - name: people
     label: People
+    icon: book-user
     type: collection
     path: src/content/people
+    icon: users-round
     format: yaml-frontmatter
     filename: '{primary}.mdx'
     fields:
       - name: title
-        label: Name
+        label: Title
         type: string
         required: true
       - name: body
@@ -86,6 +91,7 @@ content:
         type: boolean
         required: false
     view:
+      icon: book-user
       fields: [title, awesomeness, visible]
       primary: title
       sort: [ awesomeness, title ]
