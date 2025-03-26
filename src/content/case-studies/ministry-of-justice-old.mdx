@@ -1,0 +1,60 @@
+---
+published: false
+title: "Ministry of Justice: Transforming Digital Services for HMCTS"
+awesomeness: 0
+---
+
+# Ministry of Justice
+
+The Ministry of Justice is a major government department at the heart of the justice system. It works to protect the public and reduce re-offending, as well as to provide access to justice, to increase confidence in the justice system, and to uphold civil liberties.
+
+## Case study
+
+### HMCTS CFT Reform Programme
+
+Working with [Solirius](https://www.solirius.com), Norton Studios designed and delivered multiple citizen-facing services for the HMCTS CFT Reform programme using a microservice architecture for reusable components. These reusable components have enabled each jurisdiction to easily create user-centred GDS compliant services via RESTful APIs and asynchronous event queues.
+
+We also designed and contributed to an open-source case management system, CCD, which securely stores sensitive data and is used by over 200,000 users. The system architecture is built on loosely-coupled, scalable and secure RESTful Azure PaaS microservices, deployed as Docker containers and managed by Kubernetes using a Jenkins CI/CD pipeline. The services comply with AA 3C WCAG 2.0 accessibility standards and passed the relevant GDS assessments.
+
+### No Fault Divorce
+
+Following the Divorce, Dissolution and Separation Act 2020, HMCTS were required to re-launch its divorce service. We assembled a high performing multi-functional team. By adopting HMCTS standards and maximising re-use of common components, our engineering team delivered on time and reduced the application size from 390,000 to 109,000 lines of code. Our team worked collaboratively with a diverse tech stack to build upon its significant previous HMCTS experience and create the new service.
+
+Core technologies used included:
+
+- Java with Spring Boot
+- Node.js with Nunjucks and Redis.
+- Junit and Jest for unit testing.
+- Docker, Kubernetes and Terraform for deployment automation.
+- Gatling for performance testing.
+- Pa11y for automated accessibility testing.
+
+Full-stack DevOps Software Engineers proactively resolved issues themselves, and kept the service aligned with CoE DevOps practices whilst maintaining the GDS toolkit standards. QAs and SDETs designed all tests (unit, integration, end-to-end UI, cross browser accessibility, performance and security) and ensured execution within pipelines. DAC testing revealed zero remediations and achieved accreditation at first audit.
+
+During the development of the No Fault Divorce service, several new open source libraries were developed and No Fault Divorce became the exemplar service for all future services in HMCTS.
+
+The service launched on April 6th, 2022 - the same day the new law came into effect - and has been very positively received by citizens and court staff. One judge noted its "now customary speed" when a [divorce was granted in 21 minutes](https://www.bbc.co.uk/news/uk-68821406).
+
+### Centre of Excellence (CoE)
+
+- Integrated Civil Servant developers, from graduate to seasoned developers, into a complex multi-supplier environment.
+- Developed dashboards to track key metrics such as Deployment Frequency, Lead Time to Changes, Mean Time to Recovery, and Change Failure Rate using Grafana and Terraform pipelines.
+- Fostered a vibrant development community within the organisation, hosting regular all hands meetings with over 100 developers.
+- Developed a comprehensive set of [Engineering Standards](https://hmcts.github.io/standards/index.html) to encompass the best practices and guidelines for the development teams to follow.
+- Coached the team on best use of Jenkins, GitHub Actions, Terraform, Helm, Flux and Kubernetes.
+- Mentored the team on best practices around trunk based development and CI/CD.
+- Audited the design and technical implementation of the services to ensure they met HMCTS standards.
+
+### FaCT
+
+In September 2020, Solirius was asked to restack the Court and Tribunal Finder service, from a Python based service, to one built using Java and NodeJS. With the change in tech stack also came the opportunity to rename the service, inline with GDS guidance, to Find a Court or Tribunal Service.
+
+The service is used by HMCTS staff and citizens, and can have approx 50,000 users in a day. The service is designed to help citizens find the information they need either for their local Court or Tribunal Centres, or where to send documentation or seek updates on their case.
+
+We supplied a small cross-functional, multi-disciplined development team to work closely with the client&apos;s Product Owner and User Interaction Designer. We used Jira with Epics, tasks and stories, to help manage the project and ensure our work was visible to all. This was important as the team were all working remotely. Through robust Performance Testing, we ensured the service could ramp up to meet peak demands, and scale back for quieter times, such as the weekends and evenings.
+
+Close alignment between the client and team was crucial throughout the project. This was achieved by embedding the client team in our scrum process, so could review sprint activity, demonstrate the work delivered, and seek feedback from the stakeholders and client users. At the end of each sprint we also held retrospectives with the client team to reflect on our progress and agree on incremental improvements to take into the next sprint.
+
+We applied automated testing from the beginning, striving for 95+% code coverage to ensure we developed our code to a high quality. As a result, we were able to minimise the need for manual testing and keep technical debt to a minimum.
+
+The service was successfully restacked and new customer journeys were developed within 12 weeks. It is now much cheaper to run and better equipped to dynamically scale with demand and requirement changes. The team has since moved on to develop the ‘Admin Portal’ which enables the client staff to update and maintain the Court and Tribunal data provided to users. We are now undertaking knowledge transfer to the client&apos;s permanent staff team, so they can continue the development and enhancement of the service.

@@ -10,12 +10,15 @@
     "prettier": "prettier --write ."
   },
   "dependencies": {
+    "@formspree/react": "^3.0.0",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.1.7",
     "@types/mdx": "^2.0.13",
+    "install": "^0.13.0",
     "next": "15.1.7",
     "next-mdx-remote": "^5.0.0",
+    "npm": "^11.2.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "remark-frontmatter": "^5.0.0",
@@ -29,8 +32,8 @@
     "@types/react-dom": "19.0.4",
     "eslint": "9.20.1",
     "eslint-config-next": "15.1.7",
-    "prettier": "^3.5.3",
     "postcss": "8.5.3",
+    "prettier": "^3.5.3",
     "tailwindcss": "3.4.1",
     "typescript": "5.7.3"
   }
