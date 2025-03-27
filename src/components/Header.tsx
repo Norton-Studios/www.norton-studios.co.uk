@@ -2,12 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Container } from '@/components/Container';
 import { CustomLink } from '@/components/CustomLink';
-import { twMerge } from 'tailwind-merge';
+import { ButtonVariant } from './Button';
 
 export const Header = () => {
-  const buttonClasses =
-    'flex hover:underline hover:underline-offset-4 p-2 md:px-4 md:py-3 ml-2 md:ml-6 text-blue-900 bg-yellow-500 font-bold hover:bg-yellow-400';
-  const mobileLinkClasses = 'px-2 py-4';
+  const mobileLinkClasses = 'px-2 py-4 no-underline';
 
   const menuItems = [
     {
@@ -19,27 +17,19 @@ export const Header = () => {
       url: '/case-studies'
     },
     {
-      label: 'People',
-      url: '/people'
-    },
-    {
-      label: 'About Us',
+      label: 'About us',
       url: '/about-us'
     }
   ];
 
   return (
     <header className="py-4 md:py-8">
+      <a href="#main" className="sr-only">
+        Skip to content
+      </a>
       <Container className="flex justify-between align-middle items-center relative">
         <Link href="/">
-          <Image
-            className="dark:invert w-[151px] h-[76px] md:w-[202px] md:h-[102px]"
-            src="/colour-logo.svg"
-            alt="Norton Studios Logo"
-            width={604}
-            height={307}
-            priority
-          />
+          <Image className="w-[151px] h-[76px] md:w-[202px] md:h-[102px]" src="/colour-logo.svg" alt="Norton Studios Logo" width={604} height={307} priority />
         </Link>
 
         <details className="lg:hidden">
@@ -59,9 +49,9 @@ export const Header = () => {
                 );
               })}
             </nav>
-            <Link href="/talk-to-us" className={twMerge(buttonClasses, 'inline-block text-center px-6 my-4')}>
+            <CustomLink href="/contact-us" asButtonVariant={ButtonVariant.SECONDARY}>
               Talk to us!
-            </Link>
+            </CustomLink>
           </div>
         </details>
 
@@ -72,16 +62,16 @@ export const Header = () => {
                 <CustomLink
                   key={item.url}
                   href={item.url}
-                  className="text-lg relative font-bold p-4 mx-2 hover:no-underline hover:after:content-[''] hover:after:h-1 hover:after:w-full hover:after:block hover:after:absolute hover:after:bottom-0 hover:after:left-0 hover:after:bg-yellow-500 hover:after:mt-2 after:transition-all after:duration-300 after:ease-in-out focus:text-blue-900 focus:no-underline focus:after:content-[''] focus:after:h-1 focus:after:w-full focus:after:block focus:after:absolute focus:after:bottom-0 focus:after:left-0 focus:after:bg-yellow-500 focus:after:mt-2"
+                  className="text-lg relative font-bold p-4 mx-2 no-underline hover:after:content-[''] hover:after:h-1 hover:after:w-full hover:after:block hover:after:absolute hover:after:bottom-0 hover:after:left-0 hover:after:bg-yellow-500 hover:after:mt-2 after:transition-all after:duration-300 after:ease-in-out focus:text-blue-900 focus:no-underline focus:after:content-[''] focus:after:h-1 focus:after:w-full focus:after:block focus:after:absolute focus:after:bottom-0 focus:after:left-0 focus:after:bg-yellow-500 focus:after:mt-2"
                 >
                   {item.label}
                 </CustomLink>
               );
             })}
           </nav>
-          <Link href="/talk-to-us" className={buttonClasses}>
+          <CustomLink href="/contact-us" asButtonVariant={ButtonVariant.SECONDARY}>
             Talk to us!
-          </Link>
+          </CustomLink>
         </div>
       </Container>
     </header>
