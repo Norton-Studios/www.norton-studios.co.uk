@@ -24,7 +24,7 @@ export default async function CaseStudies() {
           <Heading level="h1" underline className="!leading-[1.2] md:w-1/2 lg:w-1/3">
             Case studies
           </Heading>
-          <Paragraph className="mt-6 leading-[2]">Some of the projects we have been involved with</Paragraph>
+          <Paragraph className="mt-6 leading-[2]">Some of the projects we have been involved with:</Paragraph>
         </Container>
       </div>
 
