@@ -9,23 +9,23 @@ export const ContactForm = () => {
   const [state, handleSubmit] = useForm('mrbpldye');
 
   if (state.submitting) {
-    return <Paragraph className="h-[500px] mt-10">Submitting your details…</Paragraph>;
+    return <Paragraph className="h-[500px] mt-10">Your message is on its way…</Paragraph>;
   }
 
   if (state.succeeded) {
     return (
       <div className="h-[500px] mt-10">
         <Heading level="h2" className="mt-6">
-          Thank you for getting in touch!
+          Thanks for getting in touch!
         </Heading>
-        <Paragraph className="mt-6">We will be in touch soon.</Paragraph>
+        <Paragraph className="mt-6">We will respond as soon as possible.</Paragraph>
       </div>
     );
   }
 
   return (
     <form onSubmit={handleSubmit} className="h-min-[800px]">
-      <Paragraph className="my-8 leading-[2]">Fill in this form and we will be in touch!</Paragraph>
+      <Paragraph className="my-8 leading-[2]">We try to respond to all enquiries within 48 hours.</Paragraph>
 
       <ValidationError className="text-red-500 font-bold my-6" errors={state.errors} />
 
@@ -38,6 +38,7 @@ export const ContactForm = () => {
           id="name"
           type="text"
           name="name"
+          placeholder="Your Name"
           defaultValue=""
           required
         />
@@ -53,6 +54,7 @@ export const ContactForm = () => {
           type="email"
           name="email"
           defaultValue=""
+          placeholder="your.email@example.com"
           required
         />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
@@ -61,12 +63,12 @@ export const ContactForm = () => {
         <label className="block mb-1" htmlFor="message">
           Message
         </label>
-        <textarea className="border border-gray-400 h-40 bg-white focus:outline-yellow-500 px-3 w-full md:w-[500px]" required id="message" name="message" />
-        <ValidationError prefix="Message" field="message" errors={state.errors} />
+        <textarea className="border border-gray-400 h-40 bg-white focus:outline-yellow-500 px-3 w-full md:w-[500px]" required id="message" name="message" placeholder="Say hi..."/>
+        <ValidationError prefix="Message" field="message" errors={state.errors}/>
       </div>
 
       <Button variant={ButtonVariant.PRIMARY} type="submit">
-        Send your message
+        Send
       </Button>
     </form>
   );
