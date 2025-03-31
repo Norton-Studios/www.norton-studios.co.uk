@@ -21,10 +21,12 @@ export default async function CaseStudies() {
     <>
       <div className="bg-repeat-x bg-[center_bottom] bg-yellow_bottom pb-[200px] lg:pb-[220px] pt-4 lg:pt-8 mb-[-2px]">
         <Container>
-          <Heading level="h1" underline className="!leading-[1.2] md:w-1/2 lg:w-1/3">
-            Case studies
-          </Heading>
-          <Paragraph className="mt-6 leading-[2]">Some of the projects we have been involved with</Paragraph>
+          <div className="xl:ml-20">
+            <Heading level="h1" underline className="!leading-[1.2] md:w-1/2 lg:w-1/3">
+              Case studies
+            </Heading>
+            <Paragraph className="mt-6 leading-[2]">Some of the projects we have been involved with</Paragraph>
+          </div>
         </Container>
       </div>
 
