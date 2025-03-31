@@ -47,7 +47,7 @@ export default async function Home() {
                 height={448}
               />
             </div>
-            <div className="flex flex-col justify-center xl:pr-20">
+            <div className="flex flex-col justify-center xl:pr-28">
               <Heading level="h2" className="text-white mb-8">
                 Best practices matter to us
               </Heading>
@@ -68,11 +68,38 @@ export default async function Home() {
         </Container>
       </div>
 
-      <div className="bg-tan-500 py-[200px]">
+      <div className="bg-tan-500 py-20">
         <Container>
-          <Heading className="text-center" level="h2">
-            What should we put here?
+          <Heading className="mb-16 text-center" level="h2">
+            Our services
           </Heading>
+
+          <ul className="lg:grid lg:grid-cols-5 gap-4 mb-10 text-center text-lg font-semibold uppercase">
+            <li className="mb-12 lg:mb-0">
+              <Image src="/coding.png" width="120" height="120" alt={''} className="mx-auto mb-4 lg:mb-6" />
+              Software Development
+            </li>
+            <li className="mb-12 lg:mb-0">
+              <Image src="/testing.png" width="120" height="120" alt={''} className="mx-auto mb-4 lg:mb-6" />
+              Test Automation & Quality Assurance
+            </li>
+            <li className="mb-12 lg:mb-0">
+              <Image src="/architecture.png" width="120" height="120" alt={''} className="mx-auto mb-4 lg:mb-6" />
+              Architecture
+            </li>
+            <li className="mb-12 lg:mb-0">
+              <Image src="/web-design.png" width="120" height="120" alt={''} className="mx-auto mb-4 lg:mb-6" />
+              Design
+            </li>
+            <li className="lg:mb-0">
+              <Image src="/agile.png" width="120" height="120" alt={''} className="mx-auto mb-4 lg:mb-6" />
+              Agile Delivery
+            </li>
+          </ul>
+
+          <CustomLink asButtonVariant={ButtonVariant.PRIMARY} href="/how-we-work" className="mt-4 block w-max mx-auto">
+            Find out how we work
+          </CustomLink>
         </Container>
       </div>
 
