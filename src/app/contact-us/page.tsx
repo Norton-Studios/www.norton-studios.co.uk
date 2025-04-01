@@ -2,6 +2,10 @@ import { Heading } from '@/components/Heading';
 import { Container } from '@/components/Container';
 import { ContactForm } from '@/components/ContactForm';
 
+export const metadata = {
+  title: 'Norton Studios Ltd - Conact us'
+};
+
 export default function ContactPage() {
   return (
     <div className="bg-repeat-x bg-[center_bottom] bg-blue_bottom pb-[200px] md:pb-[280px] pt-4 lg:pt-8 mb-[-2px]">

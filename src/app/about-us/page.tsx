@@ -6,7 +6,7 @@ import { Paragraph } from '@/components/Paragraph';
 import { ContentFormatter } from '@/components/ContentFormatter';
 
 export const metadata = {
-  title: 'Norton Studios Ltd - Our people'
+  title: 'Norton Studios Ltd - About us'
 };
 
 export default async function People() {
