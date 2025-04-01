@@ -29,7 +29,7 @@ export const Header = () => {
       </a>
       <Container className="flex justify-between align-middle items-center relative">
         <Link href="/">
-          <Image className="w-[151px] h-[76px] md:w-[202px] md:h-[102px]" src="/colour-logo.svg" alt="Norton Studios Logo" width={604} height={307} priority />
+          <Image className="w-[137px] h-[80px] md:w-[202px] md:h-[118px]" src="/logo-new.svg" alt="Norton Studios Logo" width={604} height={307} priority />
         </Link>
 
         <details className="lg:hidden">
