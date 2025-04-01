@@ -4,6 +4,7 @@ import { Heading } from '@/components/Heading';
 import { Container } from '@/components/Container';
 import { Paragraph } from '@/components/Paragraph';
 import Image from 'next/image';
+import { MarkdownPageContainer } from '@/components/MarkdownPageContainer';
 
 export const metadata = {
   title: 'Norton Studios Ltd - Case Studies'
@@ -19,15 +20,13 @@ export default async function CaseStudies() {
 
   return (
     <>
-      <div className="bg-repeat-x bg-[center_bottom] bg-yellow_bottom pb-[200px] lg:pb-[220px] pt-4 lg:pt-8 mb-[-2px]">
-        <Container>
-          <div className="xl:ml-20">
-            <Heading level="h1" underline className="!leading-[1.2] md:w-1/2 lg:w-1/3">
-              Case studies
-            </Heading>
-            <Paragraph className="mt-6 leading-[2]">Some of the projects we have been involved with</Paragraph>
-          </div>
-        </Container>
+      <div className="bg-repeat-x bg-[center_bottom] bg-yellow_bottom pb-[200px] lg:pb-[220px] mb-[-2px]">
+        <MarkdownPageContainer>
+          <Heading level="h1" underline>
+            Case studies
+          </Heading>
+          <Paragraph className="mt-6 leading-[2]">Some of the projects we have been involved with</Paragraph>
+        </MarkdownPageContainer>
       </div>
 
       <div className="bg-yellow-500 py-[80px]">
@@ -44,7 +43,7 @@ export default async function CaseStudies() {
                     <Heading className="!text-xl" level="h2">
                       {frontmatter.title}
                     </Heading>
-                    <Image width="100" height="100" src={`/${frontmatter.slug}.webp`} alt={`${frontmatter.slug} logo`} />
+                    <Image width="150" height="150" src={`/${frontmatter.slug}.webp`} alt={`${frontmatter.slug} logo`} />
                   </a>
                 </li>
               ))}
