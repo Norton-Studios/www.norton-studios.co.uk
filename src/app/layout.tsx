@@ -24,7 +24,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  if (process.env.NODE_ENV === 'production') {
+  if (process.env.SHUTTER === 'true') {
     return (
       <html>
         <body>

@@ -25,7 +25,7 @@ export default async function CaseStudies() {
           <Heading level="h1" underline>
             Case studies
           </Heading>
-          <Paragraph className="mt-6 leading-[2]">Some of the projects we have been involved with</Paragraph>
+          <Paragraph className="mt-6 leading-[2]">With over a decade of experience, we&#39;ve delivered impactful solutions for government agencies, public sector organisations, non-profits, and private sector companies. Our case studies highlight the depth and breadth of our work—real-world examples that demonstrate how we solve complex challenges, drive innovation, and create lasting value for our clients.</Paragraph>
         </MarkdownPageContainer>
       </div>
 
