@@ -68,7 +68,7 @@ export default async function Home() {
         </Container>
       </div>
 
-      <div className="bg-tan-500 py-20">
+      <div className="bg-tan-500 pt-16 pb-0 lg:py-20">
         <Container>
           <Heading className="mb-16 text-center" level="h2">
             Our services
@@ -103,7 +103,7 @@ export default async function Home() {
         </Container>
       </div>
 
-      <div className="bg-yellow-500 bg-tan_top bg-[center_top] pt-[200px] pb-20 bg-no-repeat">
+      <div className="bg-yellow-500 bg-tan_top bg-[center_top] pt-[175px] lg:pt-[200px] pb-20 bg-no-repeat">
         <Container>
           <div className="lg:grid lg:grid-cols-2 lg:gap-4">
             <div>

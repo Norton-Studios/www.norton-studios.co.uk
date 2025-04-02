@@ -13,7 +13,6 @@ export const Header = () => {
   const mobileLinkClasses = 'py-4 px-2 no-underline border-b-[1px] border-b-white focus:text-blue-900 focus:bg-white';
 
   const handleNavigation = (event: MouseEvent<HTMLElement>) => {
-    console.log('hhhmmm');
     event.preventDefault();
     setIsNavigationOpen(!isNavigationOpen);
   };
@@ -47,7 +46,7 @@ export const Header = () => {
           <details open={isNavigationOpen} className="lg:hidden">
             <summary
               onClick={(e) => handleNavigation(e)}
-              className="list-none text-xl cursor-pointer border-2 border-white focus-visible:border-yellow-500 focus-visible:border-2 focus-visible:outline-none p-2"
+              className="list-none [&::-webkit-details-marker]:hidden text-xl cursor-pointer border-2 border-white focus-visible:border-yellow-500 focus-visible:border-2 focus-visible:outline-none p-2"
             >
               <Image className={twMerge(isNavigationOpen && 'hidden')} src="/menu.svg" alt={''} width="24" height="24" />
               <Image className={twMerge(!isNavigationOpen && 'hidden')} src="/menu-close.svg" alt={''} width="24" height="24" />
@@ -57,13 +56,13 @@ export const Header = () => {
               <nav className="flex flex-col mb-4">
                 {menuItems.map((item) => {
                   return (
-                    <CustomLink key={item.url} variant="blue" href={item.url} className={mobileLinkClasses}>
+                    <CustomLink onClick={() => setIsNavigationOpen(false)} key={item.url} variant="blue" href={item.url} className={mobileLinkClasses}>
                       {item.label}
                     </CustomLink>
                   );
                 })}
               </nav>
-              <CustomLink href="/contact-us" asButtonVariant={ButtonVariant.SECONDARY}>
+              <CustomLink onClick={() => setIsNavigationOpen(false)} href="/contact-us" asButtonVariant={ButtonVariant.SECONDARY}>
                 Talk to us!
               </CustomLink>
             </div>
