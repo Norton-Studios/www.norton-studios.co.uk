@@ -4,6 +4,7 @@ import { Heading } from '@/components/Heading';
 import { Container } from '@/components/Container';
 import { Paragraph } from '@/components/Paragraph';
 import { ContentFormatter } from '@/components/ContentFormatter';
+import Image from "next/image";
 
 export const metadata = {
   title: 'Norton Studios Ltd - About us'
@@ -49,10 +50,15 @@ export default async function People() {
                       className="block p-6 pb-4 bg-white hover:bg-tan-500 transition-all duration-300 h-full mb-6 border-b-8 border-white hover:border-blue-900"
                       href={`/people/${frontmatter.slug}`}
                     >
-                      <Heading className="!text-xl" level="h2">
-                        {formattedName}
-                      </Heading>
-                      <Paragraph className="mb-0">{frontmatter.title}</Paragraph>
+                      <div className="flex items-center">
+                        <Image className="rounded-full" width="100" height="100" src={`/people/${frontmatter.slug}.png`} alt={`${formattedName} logo`} />
+                        <div className="ml-4">
+                          <Heading className="!text-lg" level="h2">
+                            {formattedName}
+                          </Heading>
+                          <Paragraph className="mb-0">{frontmatter.title}</Paragraph>
+                        </div>
+                      </div>
                     </a>
                   </li>
                 );
