@@ -5,27 +5,43 @@ awesomeness: 0
 ---
 # Registers of Scotland
 
-Registers of Scotland (RoS) manages 20 public registers related to land, property, and legal documents, ensuring transparency and efficiency in property transactions and civil registrations. To improve software development processes, RoS sought to modernise its engineering practices and streamline CI/CD workflows.
+Registers of Scotland (RoS) manages 20 public registers covering land, property, and legal records that underpin the Scottish property system. As part of its modernisation programme, RoS set out not only to improve software delivery, but to build internal capability in applied AI and introduce AI safely into day-to-day engineering practice.
 
-#### **Problem**
+## Problem
 
-RoS development teams needed better tooling, standardised best practices, and improved CI/CD pipelines to accelerate software delivery while maintaining security and quality.
+RoS faced two related challenges:
 
-#### **Solution**
+Building a scalable, production-grade AI platform capable of handling document-heavy, high-assurance use cases such as land title processing.
 
-Norton Studios:
+Introducing AI-assisted development tools across engineering teams in a way that met public-sector requirements for security, governance, and auditability.
 
-*   Coached teams on CI/CD, trunk-based development, and Agile software delivery to improve efficiency.
-    
-*   Defined engineering standards and best practices, ensuring consistency across projects.
-    
-*   Developed internal tools using Node.js and TypeScript, enhancing developer productivity and observability with Grafana.
-    
+## Solution
 
-#### **Impact**
+Norton Studios worked with RoS across two complementary streams.
 
-✅ **Faster, more reliable deployments** – Improved CI/CD pipelines integrated AWS CDK deployment, SonarQube, OSV security scanning, and automated testing.  
-✅ **Enhanced developer experience** – Custom internal tools boosted efficiency, reducing manual overhead.  
-✅ **Long-term process improvements** – Engineering teams adopted modern best practices, improving collaboration and delivery speed.
+### AI Platform & MLOps Enablement
 
-By refining RoS’s development processes, Norton Studios helped create a more agile, efficient, and scalable software delivery ecosystem.
+We embedded with RoS's AI engineering team to help shape and deliver their AI platform:
+
+ - Assisted in the development of an end-to-end AI and MLOps strategy, from model development through to production deployment.
+ - Designed an OCR-led document processing pipeline to extract and structure data from legal documents.
+ - Supported the platform architecture using Kubernetes, KServe, and Argo-based CI/CD for model deployment and lifecycle management.
+ - Applied large language models to predict and analyse changes to title deeds in the Scottish Land Register, accelerating downstream review and decision-making.
+
+### AI Code Assistance Development Rollout
+
+Alongside the platform work, we led the organisation-wide rollout of AI code assistants:
+
+ - Designed governance and usage standards for AI-assisted coding in a regulated, public-sector environment.
+ - Selected and configured tooling aligned with RoS security and compliance requirements.
+ - Delivered hands-on training and coaching to engineering teams, focusing on safe, effective adoption rather than novelty.
+ - Embedded AI usage into existing development workflows and engineering standards.
+
+## Impact
+
+✅ Production-ready AI capability – RoS established a scalable AI platform with clear MLOps practices and deployment pathways.
+✅ Faster insight from complex documents – AI-driven OCR and LLM workflows reduced manual effort in analysing land and title data.
+✅ Safe adoption of AI across engineering – Teams adopted AI code assistants with confidence, backed by clear governance and training.
+✅ Long-term capability uplift – RoS built internal skills in both AI engineering and responsible AI usage, reducing reliance on vendors.
+
+By combining deep AI engineering support with practical governance and adoption, Norton Studios helped Registers of Scotland move from experimentation to sustainable, production-grade use of AI.
